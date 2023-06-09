@@ -54,3 +54,8 @@ footer {
     }
 }
 
+.frmPrincipal {
+  height: 30%;  
+  width: 70%;
+  margin-left: 150px;  
+}

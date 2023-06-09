@@ -41,7 +41,7 @@ const notesRoutes = require('./routes/notes');
 app.get('/', async function(req, res) {
 
 
-    const notes = await db.getDb().db().collection('notes').find({}).toArray();
+    const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
     res.render('home', {notes});
 
 });

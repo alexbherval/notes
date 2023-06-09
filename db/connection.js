@@ -3,7 +3,7 @@ const {MongoClient} = require('mongodb');
 
 
 //Definindo URL de conexao e porta, após a porta é imprtante colocar o nome do banco.
-const url = "mongodb://127.0.0.1:27017/notesDb";
+const url = "mongodb://127.0.0.1:27017/AbeuGed";
 
 let _db;
 

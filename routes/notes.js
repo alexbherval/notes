@@ -14,15 +14,23 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
 
     const data = req.body;
-    const title = data.title;
+    const obsCi = data.obsCi;
     const description = data.description;
+    const remetente = data.remetente;
+    const setorRemetente = data.setorRemetente;
+    const setorDestinatario = data.setorDestinatario;
+    const assunto = data.assunto;
+    // const dataSolicit = data.dataSolicit;
+    const destinatario = data.destinatario;
 
     //Buscando o Banco de dados:
 
         db.getDb()
         .db()
-        .collection('notes')
-        .insertOne({ title: title, description: description });
+        .collection('comunicInterno')
+        .insertOne({ description: {assunto: assunto, descritivo: description}, remetente: remetente,
+                        setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
+                        dataSolicit: new Date, obsCi: obsCi  });
 
     res.redirect(301, '/');
 
@@ -31,7 +39,7 @@ router.post('/', function(req, res){
 //Rota de view do detalhes da nota
 router.get('/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
-    const note = await db.getDb().db().collection('notes').findOne({ _id: id });
+    const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
     res.render('notes/detail', { note });
 
@@ -40,7 +48,7 @@ router.get('/:id', async function (req, res) {
 //View Edição da Nota
 router.get('/edit/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
-    const note = await db.getDb().db().collection('notes').findOne({ _id: id });
+    const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
     res.render('notes/edit', { note });
 
@@ -56,7 +64,7 @@ router.post('/update', function(req, res){
     //Buscando o Banco de dados:
     db.getDb()
         .db()
-        .collection('notes')
+        .collection('comunicInterno')
         .updateOne({_id: id}, { $set: { title: title, description: description } });
 
     res.redirect(301, '/');
@@ -71,7 +79,7 @@ router.post('/delete', function(req, res){
     //Buscando o Banco de dados:
     db.getDb()
         .db()
-        .collection('notes')
+        .collection('comunicInterno')
         .deleteOne({ _id: id });
 
     res.redirect(301, '/');

@@ -1,4 +1,4 @@
-<h1>Suas notas:</h1>
+<h3 class="text-center pb-4 pt-2">COMUNICADO INTERNO</h3>
 <table class="table">
     <thead>
         <tr>
@@ -11,7 +11,7 @@
         {{#each notes}} <!--Instrução handlebars Faer alguma coisa em cada nota-->
         <tr>
             <td scope="row">{{ @index }}</td>
-            <td class="title-column"><a href="notes/{{ this._id }}">{{ this.title}}</a></td>
+            <td class="title-column"><a href="notes/{{ this._id }}">{{ this.description.assunto}}</a></td>
             <td class="actions-column">
                 <a href="notes/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
                 <form action="notes/delete" method="POST">

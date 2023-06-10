@@ -1,15 +1,84 @@
 <a href="/">Voltar</a>
 <h2>Editando  a nota: {{ note.assunto }}</h2>
-<form action="/notes/update" method="post">
-    <input type="hidden" name="id" value="{{ note._id }}">
-    <div class="mb-3">
-        <label for="title" class="form-label">Título:</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="O que você pretende fazer?" value="{{ note.description.assunto }}">
+
+<h2 class="text-center">EDITANDO C.C</h2>
+<form action="/update" method="post">
+    <div class="row g-2 mb-2 mt-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="remetente" name="remetente"
+                    placeholder="Insira o nome do remetente" required="true" value="{{ note.remetente }}">
+                <label for="remetente">Remetente</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="setorRemetente" name="setorRemetente">
+                    <option selected></option>
+                    <option value="Tecnologia da Informação">T.I</option>
+                    <option value="Recursos Humanos">RH</option>
+                    <option value="Secretaria Acadêmica">Sec. Acadêmica</option>
+                </select>
+                <label for="setorRemetente">Setor Solicitante</label>
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="Description" class="form-label">Descrição:</label>
-        <textarea name="description" id="description" class="form-control" placeholder="Descreva melhor o que deseja fazer">{{ note.description.descritivo }}</textarea>
+    <div class="row g-2 mb-2">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="assunto" name="assunto"
+                    placeholder="Insira o nome do requerente" required="true" value="{{ note.description.assunto }}">
+                <label for="assunto">Assunto</label>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-2 mb-2">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="item" name="item" placeholder="Insira o nome do requerente"
+                    required="true" value="{{ note.description.item }}">
+                <label for="assunto">Item:</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="row g-2 mb-2">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Insira seu comunicado" id="description" style="height: 100px"
+                name="description" value="{{ note.description.descritivo }}"></textarea>
+            <label for="Description">Descrição:</label>
+        </div>
+    </div>
+
+    <div class="row g-2 mb-2">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="destinatario" placeholder="Insira o nome do requerente"
+                    name="destinatario" value="{{ note.destinatario }}">
+                <label for="destinatario">Destinatário</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="setorDestinatario" name="setorDestinatario" value="{{ note.setorDestinatario}}">
+                    <option selected></option>
+                    <option value="Tecnologia da Informação">T.I</option>
+                    <option value="Recursos Humanos">RH</option>
+                    <option value="Secretaria Acadêmica">Sec. Acadêmica</option>
+                </select>
+                <label for="setorDestinatario">Setor de Destino</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="row g-2 mb-2">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Descreva sua objervação" id="obsCi" style="height: 100px"
+                name="obsCi" value="{{ note.obsCi }}"></textarea>
+            <label for="obsCi">Observações:</label>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary">Gravar</button>
-
 </form>

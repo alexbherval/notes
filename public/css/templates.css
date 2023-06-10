@@ -8,9 +8,6 @@
 
 }
 
-
-
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -24,17 +21,19 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: #1B65A6;
+  background: var(--abeuLightBlue);
   z-index: 100;
   transition: all 0.5s ease;
 }
+
+
 .sidebar.close {
   width: 78px;
 }
 
 .sidebar.close .logo-details img {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 70px;
 }
 
 .sidebar .logo-details {
@@ -43,15 +42,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 30PX;
 }
 .sidebar .logo-details img {
-  height: 80px;
-  width: 80px;
+  /*height: auto;*/
+  width: 182px;
   object-fit: cover;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   justify-content: center;
-  margin-top: 15%;
-  background: #012340;
+  margin-top: 30%;
+  /*background: #012340;*/
   transition: all 0.5s ease;
 }
 .sidebar .logo-details .logo_name {
@@ -71,6 +71,9 @@
   padding: 30px 0 150px 0;
   overflow: auto;
 }
+.nav-links {
+  padding-top: 10rem!important;
+}
 .sidebar.close .nav-links {
   overflow: visible;
 }
@@ -83,7 +86,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover {
-  background: #012340;
+  background: var(--primaryCollor);
 }
 .sidebar .nav-links li .iocn-link {
   display: flex;
@@ -138,7 +141,7 @@
 .sidebar .nav-links li .sub-menu {
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #033d70;
+  background: var(--primaryCollor);
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu {
@@ -199,7 +202,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #012340;
+  background: var(--secundaryCollor);
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -229,7 +232,7 @@
   object-fit: cover;
   border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #012340;
+  background: var(--primaryCollor);
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img {
@@ -269,7 +272,7 @@
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text {
-  color: #ffffff;
+  color: var(--abeuYelow);
   font-size: 35px;
 }
 .home-section .home-content .bx-menu {

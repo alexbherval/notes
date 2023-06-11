@@ -6,8 +6,8 @@ const { ObjectId } = require('mongodb');
 
 //Rota para criar uma nota
 router.get('/', function(req, res){
-
-    res.render('notes/create')
+    const  pageTitle = "CRIANDO COMUNICADO INTERNO "
+    res.render('notes/create', { pageTitle} )
 })
 
 // Inserindo nota no sistema 
@@ -37,25 +37,28 @@ router.post('/', function(req, res){
                         setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
                         dataSolicit: new Date, obsCi: obsCi  });
 
-    res.redirect(301, '/');
+       
+        res.redirect(301, '/');
 
 });
 
 //Rota de view do detalhes da nota
 router.get('/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
+    const pageTitle = "COMUNICAÇÃO INTERNO Nº " + id
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
-    res.render('notes/detail', { note });
+    res.render('notes/detail', { note, pageTitle });
 
 })
 
 //View Edição da Nota
 router.get('/edit/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
+    const pageTitle = "EDITANDO COMUNICAÇÃO INTERNA Nº " + id
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
-    res.render('notes/edit', { note });
+    res.render('notes/edit', { note, pageTitle });
 
 })
 

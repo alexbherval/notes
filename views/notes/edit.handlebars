@@ -2,8 +2,8 @@
 
 
 <h2 class="text-center pt-2"></h2>
-
-<form action="/update" method="post"></form>
+<form action="/notes/update" method="post">
+    <input type="hidden" name="id" value="{{note._id}}">
     <div class="row g-2 mb-2 mt-3">
         <div class="col-md">
             <div class="form-floating">
@@ -39,7 +39,7 @@
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="item" name="item" placeholder="Insira o nome do requerente"
-                    required="true" value="{{ note.description.item }}">
+                     value="{{ note.description.item }}">
                 <label for="assunto">Item:</label>
             </div>
         </div>
@@ -85,5 +85,5 @@
 
     </div>
     
-    <button type="submit" class="btn btn-primary">Salvar</button>
+     <button type="submit" class="btn btn-primary mb-3">Salvar</button>
 </form>

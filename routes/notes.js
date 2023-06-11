@@ -35,7 +35,7 @@ router.post('/', function(req, res){
         .collection('comunicInterno')
         .insertOne({ description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
                         setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
-                        dataSolicit: new Date, obsCi: obsCi  });
+                        dataSolicit: new Date, dataUpdate: new Date, obsCi: obsCi });
 
        
         res.redirect(301, '/');
@@ -52,6 +52,7 @@ router.get('/:id', async function (req, res) {
 
 })
 
+
 //View Edição da Nota
 router.get('/edit/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
@@ -67,7 +68,6 @@ router.post('/update', function(req, res){
 
     const data = req.body;
     const id = new ObjectId(data.id);
-    const title = data.title;
     const obsCi = data.obsCi;
     const description = data.description;
     const remetente = data.remetente;
@@ -75,16 +75,15 @@ router.post('/update', function(req, res){
     const setorDestinatario = data.setorDestinatario;
     const assunto = data.assunto;
     const destinatario = data.destinatario;
-
-
+    const dataItens = data.item;
 
     //Buscando o Banco de dados:
     db.getDb()
         .db()
         .collection('comunicInterno')
-        .updateOne({_id: id}, { $set: { description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
+        .updateOne({ _id: id }, { $set: { description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
             setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
-            dataSolicit: new Date, obsCi: obsCi  } });
+            dataUpdate: new Date, obsCi: obsCi  }});
 
     res.redirect(301, '/');
 });

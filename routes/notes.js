@@ -6,7 +6,7 @@ const { ObjectId } = require('mongodb');
 
 //Rota para criar uma nota
 router.get('/', function(req, res){
-    const  pageTitle = "CRIANDO COMUNICADO INTERNO "
+    const  pageTitle = "CRIANDO COMUNICADO"
     res.render('notes/create', { pageTitle} )
 })
 

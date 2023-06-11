@@ -1,0 +1,12 @@
+:root{
+    --primaryCollor: #033d70;
+    --secundaryCollor: #1B65A6;
+    --abeublack: #0D0D0D;
+    --abeuYelow: #D9AD29;
+    --abeuLightBlue: #4E94BF;
+    --abeuWhite: rgb(255, 255, 255);
+  }
+
+  body{
+    background-color: var(--primaryCollor);
+  }

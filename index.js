@@ -35,6 +35,7 @@ app.use(bodyParse.urlencoded({ extended: true })); //Responsável por utilizar o
 
 //Importação de Rotas
 const notesRoutes = require('./routes/notes');
+const userRoutes = require('./routes/user')
 
 
 //Rota principal 
@@ -48,7 +49,7 @@ app.get('/', async function(req, res) {
 
 //Inserindo as Rotas da Aplicação
 app.use('/notes', notesRoutes);
-
+app.use('/user', userRoutes);
 
 /*Definindo a porta de serviço do Express */
 db.initDb((err, db) => {

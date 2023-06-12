@@ -23,14 +23,14 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 3%;
 
 }
 
 .containerLogin {
     background-color: var(--abeuLightBlue);
-    width: 500px;
-    height: 650px;
+    width: 28%;
+    height: 70%;
     box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -57,18 +57,17 @@ body {
 span {
     font-weight: 900;
     color: var(--primaryCollor);
-    font-size: 38PX;
+    font-size: 30px;
 }
 
 h1 {
     color: var(--abeuYelow);
-    font-size: 38px !important;
+    font-size: 30px !important;
 
 }
 
 input {
     border-radius: 3 !important;
-
 }
 
 p {

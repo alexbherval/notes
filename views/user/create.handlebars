@@ -1,0 +1,109 @@
+<h2 class="text-center pt-2"></h2>
+<div class="d-flex justify-content-center ">
+    <img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
+</div>
+
+
+<form action="/user" method="post">
+    <div class="row g-2 mb-2 mt-3">
+
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="sobreNome" name="SobreNome"
+                    placeholder="Insira o CPF do usuário ">
+                <label for="sobreNome">CPF:</label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="userName" name="userName"
+                    placeholder="Insira o nome do usuário">
+                <label for="userName">Nome de Usuário</label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="typeUser" name="typeUser">
+                    <option selected></option>
+                    <option value="Admin">Administrador</option>
+                    <option value="noAdmin">Usuário</option>
+                </select>
+                <label for="typeUser">Perfil</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="setorUser" name="setorUser">
+                    <option selected></option>
+                    <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                </select>
+                <label for="setorUser">Setor Associado</label>
+            </div>
+        </div>
+    </div>
+    <div class="row g-2 mb-2">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome ">
+                <label for="assunto">Nome:</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="sobreNome" name="SobreNome" placeholder="Insira o nome ">
+                <label for="sobreNome">Sobrenome:</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="email" name="email"
+                    placeholder="Insira o email institucinal ">
+                <label for="email">Email:</label>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    
+    <div class="row g-2 mb-2">
+
+
+
+
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="unidUserAlocation" name="unidUserAlocation">
+                    <option selected></option>
+                    <option value="Admin">Belford Roxo</option>
+                    <option value="noAdmin">Nilópolis</option>
+                </select>
+                <label for="unidUserAlocation">Unidade de Alocação do Usuário</label>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua senha ">
+                <label for="senha">Senha inicial:</label>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Criar</button>
+</form>

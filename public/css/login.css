@@ -1,48 +1,50 @@
-:root{
+:root {
     --primaryCollor: #033d70;
     --secundaryCollor: #1B65A6;
     --abeublack: #0D0D0D;
     --abeuYelow: #D9AD29;
     --abeuLightBlue: #4E94BF;
     --abeuWhite: rgb(255, 255, 255);
-  }
+}
 
 
-  * {
+* {
     padding: 0;
     margin: 0;
-  }
+}
 
-  body{
+body {
     background-color: var(--primaryCollor);
 
 }
-  .container-fluid-full {
+
+.container-fluid-full {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    flex-direction: column;      
+    align-items: center;
+    flex-direction: column;
     margin-top: 50px;
-    
-  }
 
-  .containerLogin {
-    background-color: var(--abeuLightBlue);  
+}
+
+.containerLogin {
+    background-color: var(--abeuLightBlue);
     width: 500px;
     height: 650px;
-    box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
-  }
+    box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
 
 .btnAbeu {
     background-color: var(--secundaryCollor);
     font-weight: 500;
     border-radius: 1;
     border-color: var(--primaryCollor);
-    box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.28);
-    -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.28);
-    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.28);;
+    box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    ;
 
 }
 
@@ -53,19 +55,20 @@
 }
 
 span {
-  font-weight: 900;
-  color: var(--primaryCollor);
-  font-size: 38PX;
+    font-weight: 900;
+    color: var(--primaryCollor);
+    font-size: 38PX;
 }
 
 h1 {
     color: var(--abeuYelow);
     font-size: 38px !important;
-    
+
 }
+
 input {
     border-radius: 3 !important;
-    
+
 }
 
 p {

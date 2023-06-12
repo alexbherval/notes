@@ -67,3 +67,8 @@ input {
     border-radius: 3 !important;
     
 }
+
+p {
+    font-weight: 600;
+    text-transform: uppercase;
+}

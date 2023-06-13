@@ -11,3 +11,10 @@ console.log(sidebarBtn);
 sidebarBtn.addEventListener("click", () => {
   sidebar.classList.toggle("close");
 });
+
+
+//Alterando a cor do starus
+ var tagStatus = document.querySelector(".bg-success")
+ 
+
+tagStatus.innerHTML= "text-dark"

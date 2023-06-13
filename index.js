@@ -23,7 +23,7 @@ const db = require('./db/connection')
     *Definindo a engine a ser utilizada
 */
 app.engine('handlebars', exphbs.engine()); // informa que a aplicação utiliza handlebars para renderzar as viewa
-app.set('view engine','handlebars') 
+app.set('view engine','handlebars');
 app.use(express.static('public')); // Informa o caminho do diretório dos arquivos estaticos (public), onde ficara o css.
 app.use(bodyParse.urlencoded({ extended: true })); //Responsável por utilizar o corpo da requizição e transformar em dados.
 
@@ -43,6 +43,7 @@ app.get('/', async function(req, res) {
     const pageTitle = "DASHBOARD" 
 
     const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
+
     res.render('home', {notes, pageTitle});
 
 });

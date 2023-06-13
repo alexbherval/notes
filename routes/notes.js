@@ -2,7 +2,7 @@
 const Router = require('express').Router;
 const db = require('../db/connection');
 const { ObjectId } = require('mongodb');
-
+const Swal = require('sweetalert2')
 const router = Router();
 
 //Rota para criar uma nota
@@ -36,7 +36,7 @@ router.post('/', function(req, res){
         .collection('comunicInterno')
         .insertOne({ description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
                         setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
-                        dataSolicit: new Date, dataUpdate: new Date, obsCi: obsCi });
+                        isSend: "Aguardando Transporte", dataSolicit: new Date, dataUpdate: new Date, obsCi: obsCi });
 
        
         res.redirect(301, '/');
@@ -49,7 +49,8 @@ router.get('/:id', async function (req, res) {
     const pageTitle = "COMUNICAÇÃO INTERNA" 
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
-    res.render('notes/detail', { note, pageTitle });
+    res.render('notes/detail', { note, pageTitle});
+ 
 
 })
 
@@ -57,6 +58,7 @@ router.get('/:id', async function (req, res) {
 //View Edição da Nota
 router.get('/edit/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
+    
     const pageTitle = "EDITANDO COMUNICAÇÃO INTERNA Nº " + id
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
@@ -77,7 +79,8 @@ router.post('/update', function(req, res){
     const assunto = data.assunto;
     const destinatario = data.destinatario;
     const dataItens = data.item;
-
+    const isSend = data.isSend
+   
     //Buscando o Banco de dados:
     db.getDb()
         .db()

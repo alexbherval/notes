@@ -16,7 +16,8 @@
 }
 
 .title-column {
-    width: 50%;
+    width: auto;
+
 }
 
 .title-column a {

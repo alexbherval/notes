@@ -2,17 +2,13 @@
 <div class="d-flex justify-content-center ">
     <img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
 </div>
-
-
-<form action="/user" method="post">
+<form action="/user/create" method="post">
     <div class="row g-2 mb-2 mt-3">
-
-
         <div class="col-md">
             <div class="form-floating">
-                <input type="text" class="form-control" id="sobreNome" name="SobreNome"
+                <input type="text" class="form-control" id="cpf" name="cpf"
                     placeholder="Insira o CPF do usuário ">
-                <label for="sobreNome">CPF:</label>
+                <label for="cpf">CPF:</label>
             </div>
         </div>
 
@@ -23,7 +19,6 @@
                 <label for="userName">Nome de Usuário</label>
             </div>
         </div>
-
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="typeUser" name="typeUser">
@@ -49,12 +44,12 @@
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome ">
-                <label for="assunto">Nome:</label>
+                <label for="nome">Nome:</label>
             </div>
         </div>
         <div class="col-md">
             <div class="form-floating">
-                <input type="text" class="form-control" id="sobreNome" name="SobreNome" placeholder="Insira o nome ">
+                <input type="text" class="form-control" id="sobreNome" name="sobreNome" placeholder="Insira o nome ">
                 <label for="sobreNome">Sobrenome:</label>
             </div>
         </div>
@@ -66,18 +61,8 @@
             </div>
         </div>
 
-    </div>
-
-
-
-
-
-    
+    </div>  
     <div class="row g-2 mb-2">
-
-
-
-
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="unidUserAlocation" name="unidUserAlocation">
@@ -88,22 +73,12 @@
                 <label for="unidUserAlocation">Unidade de Alocação do Usuário</label>
             </div>
         </div>
-
-
-
-
-
-
         <div class="col-md">
             <div class="form-floating">
                 <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua senha ">
                 <label for="senha">Senha inicial:</label>
             </div>
         </div>
-
     </div>
-
-
-
     <button type="submit" class="btn btn-primary">Criar</button>
 </form>

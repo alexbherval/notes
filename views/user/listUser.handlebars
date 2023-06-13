@@ -1,0 +1,33 @@
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Usuário</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Setor</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each user}} <!--Instrução handlebars Fazer alguma coisa em cada nota-->
+        <tr>
+            <td scope="row">{{ @index }}</td>
+            <td class="title-column"><a href="user/{{ this._id }}">{{ this.userName}}</a></td>
+             <td class="title-column"><a href="user/{{ this._id }}">{{ this.nome}}</a></td>
+              <td class="title-column"><a href="user/{{ this._id }}">{{ this.sobreNome}}</a></td>
+            <td>{{ this.setorUser}}</td>
+            <td class="actions-column d-flex">
+                <a href="/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
+                <form action="/user/delete" method="POST">
+                    <input type="hidden" name="id" value="{{ this._id }}">
+                    <input type="submit" class="btn btn-danger" value="Excluir">
+                 </form>
+            </td>
+        </tr>
+        {{ else }}
+
+            <p class="mt-5">Não há usuários no sistema ainda, <a href="/user/create" > Click aqui para adicionar.</a></p>
+        {{/each }} <!--Termina de fazer -->
+    </tbody>
+</table>

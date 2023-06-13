@@ -1,24 +1,17 @@
-
 <h2> {{ note.assunto }}</h2>
-
 <div class="d-flex justify-content-center ">
-<img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
+    <img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
 </div>
-<div class="d-flex justify-content-center">
-    <h3>COMUNICAÇÃO INTERNA</h3>
-
+<div class="d-flex justify-content-center detailTitle">
+    <h6><strong>Nº {{note._id}} </strong></h6>
 </div>
-
-
-
-
 <h2 class="text-center"></h2>
-<form >
-    <div class="row g-2 mb-2 mt-3">
+<form>
+    <div class="row g-2 mb-2">
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="remetente" name="remetente"
-                    placeholder="Insira o nome do remetente" required="true" value="{{ note.remetente }}"disabled>
+                    placeholder="Insira o nome do remetente" required="true" value="{{ note.remetente }}" disabled>
                 <label for="remetente">Remetente</label>
             </div>
         </div>
@@ -38,7 +31,8 @@
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="assunto" name="assunto"
-                    placeholder="Insira o nome do requerente" required="true" value="{{ note.description.assunto }}" disabled>
+                    placeholder="Insira o nome do requerente" required="true" value="{{ note.description.assunto }}"
+                    disabled>
                 <label for="assunto">Assunto</label>
             </div>
         </div>
@@ -49,7 +43,7 @@
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="item" name="item" placeholder="Insira o nome do requerente"
-                    required="true" value="{{ note.description.item }}"disabled>
+                    required="true" value="{{ note.description.item }}" disabled>
                 <label for="assunto">Item:</label>
             </div>
         </div>
@@ -73,7 +67,8 @@
         </div>
         <div class="col-md">
             <div class="form-floating">
-                <select class="form-select" id="setorDestinatario" name="setorDestinatario" value="{{ note.setorDestinatario}}" disabled>
+                <select class="form-select" id="setorDestinatario" name="setorDestinatario"
+                    value="{{ note.setorDestinatario}}" disabled>
                     <option selected>{{ note.setorDestinatario }}</option>
                     <option value="Tecnologia da Informação">T.I</option>
                     <option value="Recursos Humanos">RH</option>
@@ -87,16 +82,12 @@
     <div class="row g-2 mb-2">
         <div class="form-floating">
             <textarea class="form-control" placeholder="Descreva sua objervação" id="obsCi" style="height: 100px"
-                name="obsCi" disabled >{{ note.obsCi }}</textarea>
+                name="obsCi" disabled>{{ note.obsCi }}</textarea>
             <label for="obsCi">Observações:</label>
         </div>
-
-
     </div>
     <div class="d-flex justify-content-end">
-        <a class="btn btn-primary" href="/" role="button">Voltar</a>        
+        <a class="btn btn-primary" href="/" role="button">Voltar</a>
         <a class="btn btn-secondary" href="/" role="button">Imprimir</a>
-
     </div>
-
 </form>

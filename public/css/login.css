@@ -7,7 +7,6 @@
     --abeuWhite: rgb(255, 255, 255);
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -44,14 +43,11 @@ body {
     box-shadow: -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.28);
-    ;
-
 }
 
 .btnAbeu:hover {
     background-color: var(--abeuYelow);
     color: var(--primaryCollor);
-
 }
 
 span {
@@ -63,7 +59,6 @@ span {
 h1 {
     color: var(--abeuYelow);
     font-size: 30px !important;
-
 }
 
 input {

@@ -2,8 +2,6 @@
 <div class="d-flex justify-content-center ">
 <img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
 </div>
-
-
 <h2 class="text-center"></h2>
 <form action="/notes/update" method="post">
     <input type="hidden" name="id" value="{{note._id}}">
@@ -35,9 +33,7 @@
                 <label for="assunto">Assunto</label>
             </div>
         </div>
-
     </div>
-
     <div class="row g-2 mb-2">
         <div class="col-md">
             <div class="form-floating">
@@ -46,7 +42,6 @@
                 <label for="assunto">Item:</label>
             </div>
         </div>
-
     </div>
     <div class="row g-2 mb-2">
         <div class="form-floating">
@@ -55,7 +50,6 @@
             <label for="Description">Descrição:</label>
         </div>
     </div>
-
     <div class="row g-2 mb-2">
         <div class="col-md">
             <div class="form-floating">
@@ -75,7 +69,6 @@
                 <label for="setorDestinatario">Setor de Destino</label>
             </div>
         </div>
-
     </div>
     <div class="row g-2 mb-2">
         <div class="form-floating">
@@ -83,10 +76,6 @@
                 name="obsCi"  >{{ note.obsCi }}</textarea>
             <label for="obsCi">Observações:</label>
         </div>
-
-
-
-    </div>
-    
+    </div>   
      <button type="submit" class="btn btn-primary mb-3">Salvar</button>
 </form>

@@ -11,8 +11,12 @@
     display: flex;
 }
 
+.detailTitle {
+    text-transform: uppercase;
+}
+
 .title-column {
-    width: S0%;
+    width: 50%;
 }
 
 .title-column a {

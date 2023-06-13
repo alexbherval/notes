@@ -1,12 +1,13 @@
 /** Invocando a classe routes */
 const Router = require('express').Router;
-const router = Router();
 const db = require('../db/connection');
 const { ObjectId } = require('mongodb');
 
+const router = Router();
+
 //Rota para criar uma nota
 router.get('/', function(req, res){
-    const  pageTitle = "CRIANDO COMUNICADO"
+    const  pageTitle = "CADASTRO COMUNICAÇÃO DE INTERNA"
     res.render('notes/create', { pageTitle} )
 })
 
@@ -45,7 +46,7 @@ router.post('/', function(req, res){
 //Rota de view do detalhes da nota
 router.get('/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
-    const pageTitle = "COMUNICAÇÃO INTERNO Nº " + id
+    const pageTitle = "COMUNICAÇÃO INTERNA" 
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
     res.render('notes/detail', { note, pageTitle });

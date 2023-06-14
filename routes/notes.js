@@ -22,12 +22,28 @@ router.post('/', function(req, res){
     const setorDestinatario = data.setorDestinatario;
     const assunto = data.assunto;
     const destinatario = data.destinatario;
-    if(!data.item > 0) {
-        const dataItens = [];
-        dataItens = data.item
-    }
-    // const dataSolicit = data.dataSolicit;
     const dataItens = data.item;
+    const unidEnsino = data.unidEnsino;
+    const UnidDestino = data.UnidDestino;
+    const isSend = "Aguardando Transporte"
+    var statusClass = ""
+    
+
+    // Lógia para alterar o status da Solicitação
+    if(isSend === "Aguardando Transporte"){
+        statusClass = "badge bg-info text-dark"
+
+    }else if(isSend === "Arquivado"){
+        statusClass = "badge bg-dark"
+
+    }else if(isSend === "Malote Enviado"){
+        statusClass = "badge bg-success"
+
+    }else if (isSend === "Malote Recebido"){
+        statusClass = "badge bg-danger"
+    }
+        
+    
 
     //Buscando o Banco de dados:
 
@@ -36,7 +52,8 @@ router.post('/', function(req, res){
         .collection('comunicInterno')
         .insertOne({ description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
                         setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
-                        isSend: "Aguardando Transporte", dataSolicit: new Date, dataUpdate: new Date, obsCi: obsCi });
+                        dataSolicit: new Date, dataUpdate: new Date, obsCi: obsCi, isSend: isSend, statusClass: statusClass, 
+                        unidEnsino: unidEnsino, UnidDestino: UnidDestino});
 
        
         res.redirect(301, '/');
@@ -59,7 +76,7 @@ router.get('/:id', async function (req, res) {
 router.get('/edit/:id', async function (req, res) {
     const id = new ObjectId(req.params.id);
     
-    const pageTitle = "EDITANDO COMUNICAÇÃO INTERNA Nº " + id
+    const pageTitle = "EDITANDO COMUNICAÇÃO INTERNA"
     const note = await db.getDb().db().collection('comunicInterno').findOne({ _id: id });
 
     res.render('notes/edit', { note, pageTitle });
@@ -80,6 +97,26 @@ router.post('/update', function(req, res){
     const destinatario = data.destinatario;
     const dataItens = data.item;
     const isSend = data.isSend
+    const unidEnsino = data.unidEnsino;
+    const UnidDestino = data.UnidDestino
+    var statusClass = "Arquivado"
+    
+
+    // Lógia para alterar o status da Solicitação
+    if(isSend === "Aguardando Transporte"){
+        statusClass = "badge bg-info text-dark"
+
+    }else if(isSend === "Arquivado"){
+        statusClass = "badge bg-dark"
+
+    }else if(isSend === "Malote Enviado"){
+        statusClass = "badge bg-success"
+
+    }else if (isSend === "Malote Recebido"){
+        statusClass = "badge bg-danger"
+    }
+
+
    
     //Buscando o Banco de dados:
     db.getDb()
@@ -87,7 +124,8 @@ router.post('/update', function(req, res){
         .collection('comunicInterno')
         .updateOne({ _id: id }, { $set: { description: {assunto: assunto, descritivo: description, item: dataItens}, remetente: remetente,
             setorRemetente: setorRemetente, destinatario: destinatario, setorDestinatario: setorDestinatario, 
-            dataUpdate: new Date, obsCi: obsCi  }});
+            dataUpdate: new Date, obsCi: obsCi, isSend: isSend, statusClass: statusClass, unidEnsino: unidEnsino,
+        UnidDestino: UnidDestino  }});
 
     res.redirect(301, '/');
 });

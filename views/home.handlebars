@@ -17,7 +17,7 @@
             <td class="title-column"><a href="notes/{{ this._id }}">{{ this.description.assunto}}</a></td>
              <td class="title-column"><a href="notes/{{ this._id }}">{{ this.remetente}}</a></td>
               <td class="title-column"><a href="notes/{{ this._id }}">{{ this.destinatario}}</a></td>
-            <td><span class="badge bg-success" id="tagStatus">{{this.isSend}}</span></td>
+            <td><span class="{{this.statusClass}}" >{{this.isSend}}</span></td>
             <td class="actions-column d-flex">
                 <a href="notes/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
                 <form action="notes/delete" method="POST">
@@ -26,8 +26,12 @@
                  </form>
             </td>
         </tr>
+
+
+        
         {{ else }}
             <p>Não há notas no sistema ainda, <a href="notes" > Click aqui para adicionar.</a></p>
         {{/each }} <!--Termina de fazer -->
     </tbody>
 </table>
+

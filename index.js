@@ -43,8 +43,10 @@ app.get('/', async function(req, res) {
     const pageTitle = "DASHBOARD" 
 
     const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
+      
 
-    res.render('home', {notes, pageTitle});
+
+    res.render('home', {notes, pageTitle });
 
 });
 

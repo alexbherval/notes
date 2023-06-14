@@ -13,8 +13,3 @@ sidebarBtn.addEventListener("click", () => {
 });
 
 
-//Alterando a cor do starus
- var tagStatus = document.querySelector(".bg-success")
- 
-
-tagStatus.innerHTML= "text-dark"

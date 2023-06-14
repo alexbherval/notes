@@ -1,9 +1,7 @@
 <h2 class="text-center pt-2"></h2>
 <div class="d-flex justify-content-center ">
-<img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
+    <img src="/img/UNIABEU_HORIZONTAL.png" alt="" style="width: 30%;">
 </div>
-
-
 <form action="/notes" method="post">
     <div class="row g-2 mb-2 mt-3">
         <div class="col-md">
@@ -24,6 +22,18 @@
                 <label for="setorRemetente">Setor Solicitante</label>
             </div>
         </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="unidEnsino" name="unidEnsino">
+                    <option selected></option>
+                    <option value="Tecnologia da Informação">Belford Roxo</option>
+                    <option value="Recursos Humanos">Nilópolis</option>
+                </select>
+                <label for="unidEnsino">Unidade</label>
+            </div>
+        </div>
+
     </div>
     <div class="row g-2 mb-2">
         <div class="col-md">
@@ -34,17 +44,13 @@
             </div>
         </div>
 
-    </div>
-
-    <div class="row g-2 mb-2">
         <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="item" name="item" placeholder="Insira o nome do requerente"
                     required="true">
-                <label for="assunto">Item:</label>
+                <label for="item">Item:</label>
             </div>
         </div>
-
     </div>
     <div class="row g-2 mb-2">
         <div class="form-floating">
@@ -53,7 +59,6 @@
             <label for="Description">Descrição:</label>
         </div>
     </div>
-
     <div class="row g-2 mb-2">
         <div class="col-md">
             <div class="form-floating">
@@ -71,6 +76,17 @@
                     <option value="Secretaria Acadêmica">Sec. Acadêmica</option>
                 </select>
                 <label for="setorDestinatario">Setor de Destino</label>
+           </div>       
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="UnidDestino" name="UnidDestino">
+                        <option selected></option>
+                        <option value="Belford Roxo">Belford Roxo</option>
+                        <option value="Nilópolis">Nilópolis</option>
+                        <option value="Nova Iguaçu">Nova Iguaçu</option>
+                </select>
+                <label for="UnidDestino">Unidade de Destino</label>
             </div>
         </div>
 
@@ -82,8 +98,5 @@
             <label for="obsCi">Observações:</label>
         </div>
     </div>
-
-
-
     <button type="submit" class="btn btn-primary">Criar</button>
 </form>

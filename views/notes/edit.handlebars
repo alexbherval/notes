@@ -16,14 +16,39 @@
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="setorRemetente" name="setorRemetente" >
-                    <option selected>{{ note.setorRemetente }}</option>
-                    <option value="Tecnologia da Informação">T.I</option>
-                    <option value="Recursos Humanos">RH</option>
-                    <option value="Secretaria Acadêmica">Sec. Acadêmica</option>
+                    <option >{{ note.setorRemetente }}</option>
+                    <option value="Belford Roxo">BelFord Roxo</option>
+                    <option value="Nilópolis">Nilópolis</option>
+                    <option value="Nova Iguaçu">Nova Iguaçu</option>
                 </select>
-                <label for="setorRemetente">Setor Solicitante</label>
-            </div>
+                <label for="setorRemetente">Setor Remetente:</label>
+            </div>            
         </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="unidEnsino" name="unidEnsino" >
+                    <option >{{ note.unidEnsino }}</option>
+                    <option value="Belford Roxo">Belford Roxo</option>
+                    <option value="Nilópolis">Nilópolis</option>
+
+                </select>
+                <label for="unidEnsino">Unidade</label>
+            </div>            
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <select class="form-select" id="isSend" name="isSend" >
+                    <option hidden>{{ note.isSend }}</option>
+                    <option value="Aguardando Transporte">Aguardando Transporte</option>
+                    <option value="Arquivado">Arquivado</option>
+                    <option value="Malote Enviado">Malote Enviado</option>
+                    <option value="Malote Recebido">Malote Recebido</option>
+
+                </select>
+                <label for="isSend">Status:</label>
+            </div>            
+        </div>
+
     </div>
     <div class="row g-2 mb-2">
         <div class="col-md">
@@ -33,15 +58,16 @@
                 <label for="assunto">Assunto</label>
             </div>
         </div>
-    </div>
-    <div class="row g-2 mb-2">
-        <div class="col-md">
+                <div class="col-md">
             <div class="form-floating">
                 <input type="text" class="form-control" id="item" name="item" placeholder="Insira o nome do requerente"
                      value="{{ note.description.item }}">
                 <label for="assunto">Item:</label>
             </div>
         </div>
+    </div>
+    <div class="row g-2 mb-2">
+
     </div>
     <div class="row g-2 mb-2">
         <div class="form-floating">
@@ -61,10 +87,10 @@
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="setorDestinatario" name="setorDestinatario" value="{{ note.setorDestinatario}}" >
-                    <option selected>{{ note.setorDestinatario }}</option>
-                    <option value="Tecnologia da Informação">T.I</option>
-                    <option value="Recursos Humanos">RH</option>
-                    <option value="Secretaria Acadêmica">Sec. Acadêmica</option>
+                    <option hidden>{{ note.setorDestinatario }}</option>
+                    <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                    <option value="Secretaria Acadêmica">Secretaria Acadêmica Acadêmica</option>
                 </select>
                 <label for="setorDestinatario">Setor de Destino</label>
             </div>

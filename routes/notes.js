@@ -99,6 +99,7 @@ router.post('/update', function(req, res){
     const isSend = data.isSend
     const unidEnsino = data.unidEnsino;
     const UnidDestino = data.UnidDestino
+
     var statusClass = "Arquivado"
     
 
@@ -114,6 +115,8 @@ router.post('/update', function(req, res){
 
     }else if (isSend === "Malote Recebido"){
         statusClass = "badge bg-danger"
+    }else if (isSend === "Deletado"){
+        statusClass = "badge bg-warning text-dark"
     }
 
 

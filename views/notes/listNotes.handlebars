@@ -14,13 +14,13 @@
         {{#each notes}} <!--Instrução handlebars Faer alguma coisa em cada nota-->
         <tr>
             <td scope="row">{{ @index }}</td>
-            <td class="title-column"><a href="notes/{{ this._id }}">{{ this.description.assunto}}</a></td>
-             <td class="title-column"><a href="notes/{{ this._id }}">{{ this.remetente}}</a></td>
-              <td class="title-column"><a href="notes/{{ this._id }}">{{ this.destinatario}}</a></td>
+            <td class="title-column"><a href="/notes/{{ this._id }}">{{ this.description.assunto}}</a></td>
+             <td class="title-column"><a href="/notes/{{ this._id }}">{{ this.remetente}}</a></td>
+              <td class="title-column"><a href="/notes/{{ this._id }}">{{ this.destinatario}}</a></td>
             <td><span class="{{this.statusClass}}" >{{this.isSend}}</span></td>
             <td class="actions-column d-flex">
-                <a href="notes/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
-                <form action="notes/delete" method="POST">
+                <a href="/notes/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
+                <form action="/notes/delete" method="POST">
                     <input type="hidden" name="id" value="{{ this._id }}">
                     <input type="submit" class="btn btn-danger" value="Excluir">
                  </form>
@@ -30,7 +30,7 @@
 
         
         {{ else }}
-            <p>Não há notas no sistema ainda, <a href="notes" > Click aqui para adicionar.</a></p>
+            <p>Não há notas no sistema ainda, <a href="/notes" > Click aqui para adicionar.</a></p>
         {{/each }} <!--Termina de fazer -->
     </tbody>
 </table>

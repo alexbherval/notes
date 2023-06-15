@@ -16,10 +16,10 @@
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="setorRemetente" name="setorRemetente" >
-                    <option >{{ note.setorRemetente }}</option>
-                    <option value="Belford Roxo">BelFord Roxo</option>
-                    <option value="Nilópolis">Nilópolis</option>
-                    <option value="Nova Iguaçu">Nova Iguaçu</option>
+                    <option hidden >{{ note.setorRemetente }}</option>
+                    <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                    <option value="Sec. Acadêmica">Sec. Acadêmica</option>
                 </select>
                 <label for="setorRemetente">Setor Remetente:</label>
             </div>            
@@ -27,8 +27,9 @@
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="unidEnsino" name="unidEnsino" >
-                    <option >{{ note.unidEnsino }}</option>
+                    <option hidden >{{ note.unidEnsino }}</option>
                     <option value="Belford Roxo">Belford Roxo</option>
+                    <option value="Nova Iguaçu">Nova Iguaçu</option>
                     <option value="Nilópolis">Nilópolis</option>
 
                 </select>

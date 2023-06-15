@@ -38,17 +38,49 @@ const notesRoutes = require('./routes/notes');
 const userRoutes = require('./routes/user')
 
 
-//Rota principal 
+//Rota Login
+ 
 app.get('/', async function(req, res) {
-    const pageTitle = "DASHBOARD" 
 
-    const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
-      
-
-
-    res.render('home', {notes, pageTitle });
-
+   // const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
+    
+    res.render('login', { layout: false } );
 });
+
+
+app.post('/login', async (req, res) => {
+
+    const dadosLogin = req.body;
+    const userName = dadosLogin.userName
+    const senha = dadosLogin.senha
+
+
+  
+    try {
+ 
+      const user = await db.getDb().db().collection('usuario').findOne({ userName: userName });
+
+      console.log(dadosLogin)
+      if (!user) {
+        res.render('login', { error: 'Usuário não encontrado' });
+        return;
+      }
+      if (user.senha !== senha) {
+        res.render('login', { error: 'Senha incorreta' });
+        return;
+      }
+      res.redirect('/notes/listNotes');
+    } catch (error) {
+      console.error('Erro ao autenticar usuário:', error);
+      res.render('login', { layout: false }, { error: 'Erro ao autenticar usuário' });
+    }
+  });
+  
+  
+
+
+
+
 
 //Inserindo as Rotas da Aplicação
 app.use('/notes', notesRoutes);

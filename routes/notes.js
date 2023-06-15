@@ -5,6 +5,18 @@ const { ObjectId } = require('mongodb');
 const Swal = require('sweetalert2')
 const router = Router();
 
+router.get('/listNotes', async function(req, res) {
+    const pageTitle = "DASHBOARD" 
+
+    const notes = await db.getDb().db().collection('comunicInterno').find({}).toArray();
+      
+
+
+    res.render('notes/listNotes', {notes, pageTitle });
+
+});
+
+
 //Rota para criar uma nota
 router.get('/', function(req, res){
     const  pageTitle = "CADASTRO COMUNICAÇÃO DE INTERNA"
@@ -43,10 +55,6 @@ router.post('/', function(req, res){
         statusClass = "badge bg-danger"
     }
         
-    
-
-    //Buscando o Banco de dados:
-
         db.getDb()
         .db()
         .collection('comunicInterno')
@@ -100,8 +108,7 @@ router.post('/update', function(req, res){
     const unidEnsino = data.unidEnsino;
     const UnidDestino = data.UnidDestino
 
-    var statusClass = "Arquivado"
-    
+    var statusClass = "Arquivado"  
 
     // Lógia para alterar o status da Solicitação
     if(isSend === "Aguardando Transporte"){
@@ -119,9 +126,6 @@ router.post('/update', function(req, res){
         statusClass = "badge bg-warning text-dark"
     }
 
-
-   
-    //Buscando o Banco de dados:
     db.getDb()
         .db()
         .collection('comunicInterno')
@@ -130,7 +134,7 @@ router.post('/update', function(req, res){
             dataUpdate: new Date, obsCi: obsCi, isSend: isSend, statusClass: statusClass, unidEnsino: unidEnsino,
         UnidDestino: UnidDestino  }});
 
-    res.redirect(301, '/');
+    res.redirect(301, '/notes/listNotes');
 });
 
 //Remoção da tarefa
@@ -145,7 +149,7 @@ router.post('/delete', function(req, res){
         .collection('comunicInterno')
         .deleteOne({ _id: id });
 
-    res.redirect(301, '/');
+    res.redirect(301, '/notes/listNotes');
 });
 
 //Exportando o Módulo para ser utilizado.

@@ -36,7 +36,7 @@ app.use(bodyParse.urlencoded({ extended: true })); //Responsável por utilizar o
 //Importação de Rotas
 const notesRoutes = require('./routes/notes');
 const userRoutes = require('./routes/user')
-
+//Inserindo as Rotas da Aplicação
 
 //Rota Login
  
@@ -62,29 +62,29 @@ app.post('/login', async (req, res) => {
 
       console.log(dadosLogin)
       if (!user) {
-        res.render('login', { error: 'Usuário não encontrado' });
+        res.render('notes/listNotes', { error: 'Usuário não encontrado' });
         return;
       }
       if (user.senha !== senha) {
-        res.render('login', { error: 'Senha incorreta' });
+        res.render('notes/listNotes', { error: 'Senha incorreta' });
         return;
       }
-      res.redirect('/notes/listNotes');
+      res.redirect('notes/listNotes');
     } catch (error) {
       console.error('Erro ao autenticar usuário:', error);
-      res.render('login', { layout: false }, { error: 'Erro ao autenticar usuário' });
+      res.render('login', { error: 'Erro ao autenticar usuário' });
     }
   });
   
   
+  app.use('/notes', notesRoutes);
+  app.use('/user', userRoutes);
+  
 
 
 
 
 
-//Inserindo as Rotas da Aplicação
-app.use('/notes', notesRoutes);
-app.use('/user', userRoutes);
 
 /*Definindo a porta de serviço do Express */
 db.initDb((err, db) => {
